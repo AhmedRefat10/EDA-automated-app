@@ -9,9 +9,9 @@ import seaborn as sns
 @st.cache
 def load_data(data):
   if data.name.endswith('.csv'):
-    df = pd.read_csv(data)
+    df = pd.read_csv(data, nrows=2000)
   else:
-    df = pd.read_excel(data)
+    df = pd.read_excel(data, nrows=2000)
   return df
 
 def encode_categorical(df):
