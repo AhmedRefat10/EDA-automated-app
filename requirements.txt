@@ -3,5 +3,5 @@ pandas
 numpy
 ydata-profiling
 streamlit-pandas-profiling
-sklearn
+scikit-learn
 Jinja2
