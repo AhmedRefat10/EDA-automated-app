@@ -5,10 +5,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import seaborn as sns
-import seaborn as sns
-from sklearn.preprocessing import StandardScaler
 
-@st.cache_data
+@st.cache
 def load_data(data):
   if data.name.endswith('.csv'):
     df = pd.read_csv(data)
@@ -26,9 +24,12 @@ def drop_duplicates(df):
   return df.drop_duplicates() 
 
 def scale_features(df):
-  scaler = StandardScaler()
-  return pd.DataFrame(scaler.fit_transform(df), columns=df.columns)
-
+  # scaler = StandardScaler()
+  # return pd.DataFrame(scaler.fit_transform(df), columns=df.columns)
+  mean_vals = df.mean()
+  std_vals = df.std()
+  
+  df = (df - mean_vals) / std_vals
 
 def main():
     st.header("Exploratory Data Analysis")
