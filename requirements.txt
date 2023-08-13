@@ -3,4 +3,5 @@ pandas
 numpy
 ydata-profiling
 streamlit-pandas-profiling
+sklearn
 Jinja2
