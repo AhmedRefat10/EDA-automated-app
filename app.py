@@ -24,13 +24,11 @@ def drop_duplicates(df):
   return df.drop_duplicates() 
 
 def scale_features(df):
-  # scaler = StandardScaler()
-  # return pd.DataFrame(scaler.fit_transform(df), columns=df.columns)
   mean_vals = df.mean()
   std_vals = df.std()
   
   df = (df - mean_vals) / std_vals
-
+  return df
 def main():
     st.header("Exploratory Data Analysis")
     
